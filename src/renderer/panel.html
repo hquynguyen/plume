@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <title>Plume</title>
+  </head>
+  <body>
+    <div class="panel">
+      <header class="titlebar">
+        <span class="brand">Plume</span>
+        <select id="provider" title="Provider"></select>
+        <span class="spacer"></span>
+        <button id="settings" class="icon" title="Settings">⚙</button>
+        <button id="close" class="icon" title="Hide (Esc)">✕</button>
+      </header>
+
+      <div class="controls">
+        <div class="segmented" id="mode" role="radiogroup">
+          <button data-mode="translate">Translate</button>
+          <button data-mode="compose">Compose</button>
+          <button data-mode="revise">Revise</button>
+        </div>
+        <label>to <select id="language"></select></label>
+        <select id="preset" title="Preset"></select>
+        <select id="tone" title="Tone">
+          <option value="">Tone: preset</option>
+          <option value="auto">Auto</option>
+          <option value="formal">Formal (vous)</option>
+          <option value="neutral">Neutral</option>
+          <option value="informal">Informal (tu)</option>
+        </select>
+        <select id="format" title="Format">
+          <option value="">Format: preset</option>
+          <option value="auto">Auto</option>
+          <option value="email">Email</option>
+          <option value="chat">Chat</option>
+          <option value="letter">Letter</option>
+        </select>
+      </div>
+
+      <textarea id="input" class="input" spellcheck="true"></textarea>
+
+      <details id="context-box">
+        <summary>Context <span class="muted">(message you're replying to, optional)</span></summary>
+        <div class="context-row">
+          <textarea id="context" rows="3" placeholder="Reference only: used to understand the situation, never translated."></textarea>
+          <button id="paste-context">Paste clipboard</button>
+        </div>
+      </details>
+
+      <div class="actions">
+        <button id="run" class="primary">Translate</button>
+        <button id="cancel" hidden>Cancel</button>
+        <span id="status" class="muted"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></span>
+      </div>
+
+      <textarea id="result" class="result" placeholder="Result appears here. You can edit it before copying."></textarea>
+
+      <div class="actions">
+        <button id="copy-close" class="primary" disabled>Copy &amp; close</button>
+        <button id="copy" disabled>Copy</button>
+        <button id="retry" disabled>Retry</button>
+        <span class="muted"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> copy &amp; close · <kbd>Esc</kbd> hide</span>
+      </div>
+    </div>
+    <script type="module" src="./panel.ts"></script>
+  </body>
+</html>

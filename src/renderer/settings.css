@@ -1,0 +1,101 @@
+.settings {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 20px 72px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 4px 0 16px;
+}
+
+h2 {
+  font-size: 15px;
+  margin: 24px 0 6px;
+}
+
+section > p {
+  margin: 4px 0 10px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card.selected {
+  border-color: var(--accent);
+}
+
+.card p {
+  margin: 0;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.field > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.row input[type='password'] {
+  flex: 1;
+  min-width: 200px;
+}
+
+.row .field select {
+  min-width: 120px;
+}
+
+code,
+pre {
+  font: 12px ui-monospace, monospace;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 4px;
+}
+
+pre {
+  padding: 8px;
+  overflow-x: auto;
+}
+
+.savebar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}

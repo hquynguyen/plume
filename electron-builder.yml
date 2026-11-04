@@ -1,0 +1,38 @@
+appId: dev.plume.app
+productName: Plume
+executableName: plume
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**
+  - package.json
+  # Plume runs the user's installed Claude Code, not the SDK's bundled copy.
+  - '!**/node_modules/@anthropic-ai/claude-agent-sdk-*/**'
+extraResources:
+  - from: resources/tray.png
+    to: tray.png
+  - from: scripts/install-shortcut.sh
+    to: install-shortcut.sh
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  onlyLoadAppFromAsar: true
+  enableCookieEncryption: true
+linux:
+  target: deb
+  category: Utility
+  icon: build/icon.png
+  synopsis: Translate, compose or revise text from a global hotkey
+deb:
+  depends:
+    - libsecret-1-0
+    - libgtk-3-0
+    - libnotify4
+    - libnss3
+    - libxss1
+    - libxtst6
+    - xdg-utils
+    - libatspi2.0-0
+    - libuuid1

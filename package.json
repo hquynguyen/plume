@@ -1,0 +1,48 @@
+{
+  "name": "plume",
+  "version": "0.1.0",
+  "description": "Global-hotkey writing assistant: translate, compose or revise text with Claude or OpenAI",
+  "author": "Quy Nguyen <nhquy.set@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "start": "electron-vite preview",
+    "dist": "npm run build && electron-builder --linux deb"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.3.305",
+    "@anthropic-ai/sdk": "1.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0",
+    "electron-vite": "6.0.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "vitest": "4.1.12"
+  },
+  "homepage": "https://github.com/hquynguyen/plume#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hquynguyen/plume.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hquynguyen/plume/issues"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "keywords": [
+    "translation",
+    "french",
+    "claude",
+    "electron",
+    "ubuntu"
+  ]
+}
